@@ -1,3 +1,4 @@
+                /*General common*/
 *{
     margin: 0;
     padding: 0;
@@ -14,18 +15,18 @@ body{
     font:300 16px 'Yeon Sung', cursive ;
     perspective: 700px;
 }
+                /*header*/
 .animation-head{
     margin:  auto;
     width: 100%;
     height: 200px;
     overflow: hidden;
-  
 }
 .animation-head-img{
     width: 100px;
     height: 100px;
     display: block;
-    margin: 40px 0 40px 60px;
+    margin: 40px 0 40px 70px;
     float: left;
     border-radius: 50%;
     animation: logo2 2s ease-in-out  infinite forwards;
@@ -37,7 +38,7 @@ body{
 }
 .head-content{
     float: left;
-    width: 1100px;
+    width: 1070px;
     height: 60px;
     margin: 60px 10px;
     background:-webkit-linear-gradient( right ,#97048b ,#e7c6ff,white 90%);
@@ -45,6 +46,17 @@ body{
 text-shadow: 1px 1px 5px  #613e7a;
 border-radius: 10px;
 position: relative;
+}
+.moving-head{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: change 2s ease-in-out 3 forwards;
+}
+@keyframes change{
+    0%{opacity:0.9;left: 0;}
+    50%{opacity:0.3;left: 600px;color:white;}
+    100%{opacity:0.9;left:0;}
 }
 .animation-head-title{
     display: inline;
@@ -58,110 +70,104 @@ position: relative;
     line-height: 40px;
     padding: 10px 10px;
     color: #c92faa;
-    animation: pulse 3s ease 9s infinite;
+    animation: pulse 3s ease 6s infinite;
 }
 @keyframes pulse{
-   0%{opacity:0.9 ;color:#A31ACB}
-   25%{opacity:0.5 ;color:#dd44c9}
-   50%{opacity:0.7 ;color:#dd44c9}
-   75%{opacity:0.9 ;color:#CB1C8D}
-    100%{opacity:0.3 ;color:#afa8af}
-}
-.moving-head{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    animation: change 2s ease-in-out 3 forwards;
-}
-@keyframes change{
-    0%{opacity:0.9;left: 0;}
-    50%{opacity:0.3;left: 600px;color:snow;}
-    100%{opacity:0.9;left:0;}
+   0%{opacity:0.9 ;color:#be08b5}
+   25%{opacity:0.5 ;color:#f086e2}
+   50%{opacity:0.7 ;color:#be08b5}
+   75%{opacity:0.9 ;color:#41052c}
+    100%{opacity:0.3 ;color:#1e0238}
 }
 .head-content:hover .moving-head , .head-content a i:hover ,.animation-head-title:hover {
     animation-play-state: paused;
 }
+                    /*Main*/
 .animation-container{
-    width: 1200px;
-    height: 1000px;
+    width: 1300px;
+    height: 850px;
     margin: 0px auto;
 }
 .container1{
-    width: 1100px;
-    height: 300px;
+    width: 1200px;
+    height: 250px;
     margin: 0px auto;
     overflow: hidden;
 }
 .game-d{
-    width: 350px;
-    height: 300px;
-    border-radius: 30px;
+    width: 400px;
+    height: 220px;
+    border-radius: 50px;
+    
     background:-webkit-radial-gradient(100% 100% ,circle,#CD5888   ,#5D3891 ,#e7c6ff,white 70% );
-    margin-left: 0px;
+    margin: 15px 0px;
     float: left;
     position: relative;
-    
 }
 .game1{
     background:-webkit-radial-gradient(0%  100% ,circle,#CD5888   ,#5D3891 ,#e7c6ff,white 70% );
 }
-
 .game{
-    width:50px ;
-    height: 50px;
+    width:40px ;
+    height:40px;
     border-radius: 50%;
     position: absolute;
-    margin: 25px;
     background-color: #cab7ca;
-    box-shadow: 2px 2px 20px 10px #4d0353 inset;
+    box-shadow: 1px 1px 10px 10px #4d0353 inset;
 }
-
 .game11{
-    animation: game-move1 2s ease-in-out forwards ;
+    top:20px;
+    left:20px;
+    animation: game-move1 2s ease-in-out  forwards ;
 }
 @keyframes game-move1{
-    from{ left:0; }
-    to{left: 250px;}
-    
+    0%{ transform: scale(1,1);left:20px;}
+    20%{transform: scale(0.5,0.5);  }
+    40%{transform: scale(1,1); }
+    60%{transform: scale(0.5,0.5); }
+    80%{transform: scale(1,1);}
+    100%{left: 335px; }
 }
 .game12{
-    top:100px;
-    right: 0px;
+    top:90px;
+    right: 20px;
     animation: game-move2 2s ease-in-out 2s forwards;
 }
 @keyframes game-move2{
-    from{ right:0; }
-    to{right: 250px;}
+    0%{ transform: scale(1,1);right:20px; }
+    20%{transform: scale(0.5,0.5);  }
+    40%{transform: scale(1,1); }
+    60%{transform: scale(0.5,0.5); }
+    80%{transform: scale(1,1);}
+    100%{right: 335px; }
 }
 .game13{
-    top:200px;
-    left: 0px;
+    bottom: 20px;
+    left: 20px;
     animation: game-move1 2s ease-in-out 4s forwards;
-
 }
 .game21{
-    top:0px;
-    right: 0px;
+    top:20px;
+    right:20px;
     animation: game-move2 2s ease-in-out  forwards;
 }
 .game22{
-    top:100px;
-    left: 0px;
+    top:90px;
+    left: 20px;
     animation: game-move1 2s ease-in-out 2s forwards;
 }
 .game23{
-    top:200px;
-    right: 0px;
+    bottom:20px;
+    right: 20px;
     animation: game-move2 2s ease-in-out 4s forwards;
 }
-
 .front-back{
     float: left ;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     position: relative;
-    margin: 25px 75px;
+    margin: 25px 100px;
    transform-style: preserve-3d; 
    animation: getback 6s ease-in-out 6s infinite  ;
 }
@@ -193,7 +199,7 @@ position: relative;
     border-radius: 50%;
     transform: rotateY(180deg);
     text-align: center;
-    padding: 50px;
+    padding: 25px;
     color: #613e7a;
     text-shadow:1px 5px 5px #f89af8;
     line-height: 40px;
