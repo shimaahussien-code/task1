@@ -1,0 +1,440 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+body{
+    width: 1300px;
+    height: fit-content;
+    background:-webkit-radial-gradient(50% 100% ,circle,#5D3891 ,#bc94d8,white 50% );
+    font:300 16px 'Yeon Sung', cursive ;
+    perspective: 700px;
+}
+.animation-head{
+    margin:  auto;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+  
+}
+.animation-head-img{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 40px 0 40px 60px;
+    float: left;
+    border-radius: 50%;
+    animation: logo2 2s ease-in-out  infinite forwards;
+}
+@keyframes logo2{
+    0%{transform: scale(1.4,1.4); opacity: 0.9; box-shadow: -5px 0px 20px 5px #97048b  }
+    50%{transform: scale(1.5,1.5); opacity: 0.6  }
+    100%{transform: scale(1.4,1.4); opacity: 0.9; box-shadow: -5px 0px 20px 5px #97048b  }
+}
+.head-content{
+    float: left;
+    width: 1100px;
+    height: 60px;
+    margin: 60px 10px;
+    background:-webkit-linear-gradient( right ,#97048b ,#e7c6ff,white 90%);
+    color: #c92faa;
+text-shadow: 1px 1px 5px  #613e7a;
+border-radius: 10px;
+position: relative;
+}
+.animation-head-title{
+    display: inline;
+    width: fit-content;
+    margin: 10px;
+    height: 40px;
+    animation: pulse 3s ease 9s infinite;
+}
+.head-content a i{
+    font-size: 22px;
+    line-height: 40px;
+    padding: 10px 10px;
+    color: #c92faa;
+    animation: pulse 3s ease 9s infinite;
+}
+@keyframes pulse{
+   0%{opacity:0.9 ;color:#A31ACB}
+   25%{opacity:0.5 ;color:#dd44c9}
+   50%{opacity:0.7 ;color:#dd44c9}
+   75%{opacity:0.9 ;color:#CB1C8D}
+    100%{opacity:0.3 ;color:#afa8af}
+}
+.moving-head{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: change 2s ease-in-out 3 forwards;
+}
+@keyframes change{
+    0%{opacity:0.9;left: 0;}
+    50%{opacity:0.3;left: 600px;color:snow;}
+    100%{opacity:0.9;left:0;}
+}
+.head-content:hover .moving-head , .head-content a i:hover ,.animation-head-title:hover {
+    animation-play-state: paused;
+}
+.animation-container{
+    width: 1200px;
+    height: 1000px;
+    margin: 0px auto;
+}
+.container1{
+    width: 1100px;
+    height: 300px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+.game-d{
+    width: 350px;
+    height: 300px;
+    border-radius: 30px;
+    background:-webkit-radial-gradient(100% 100% ,circle,#CD5888   ,#5D3891 ,#e7c6ff,white 70% );
+    margin-left: 0px;
+    float: left;
+    position: relative;
+    
+}
+.game1{
+    background:-webkit-radial-gradient(0%  100% ,circle,#CD5888   ,#5D3891 ,#e7c6ff,white 70% );
+}
+
+.game{
+    width:50px ;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    margin: 25px;
+    background-color: #cab7ca;
+    box-shadow: 2px 2px 20px 10px #4d0353 inset;
+}
+
+.game11{
+    animation: game-move1 2s ease-in-out forwards ;
+}
+@keyframes game-move1{
+    from{ left:0; }
+    to{left: 250px;}
+    
+}
+.game12{
+    top:100px;
+    right: 0px;
+    animation: game-move2 2s ease-in-out 2s forwards;
+}
+@keyframes game-move2{
+    from{ right:0; }
+    to{right: 250px;}
+}
+.game13{
+    top:200px;
+    left: 0px;
+    animation: game-move1 2s ease-in-out 4s forwards;
+
+}
+.game21{
+    top:0px;
+    right: 0px;
+    animation: game-move2 2s ease-in-out  forwards;
+}
+.game22{
+    top:100px;
+    left: 0px;
+    animation: game-move1 2s ease-in-out 2s forwards;
+}
+.game23{
+    top:200px;
+    right: 0px;
+    animation: game-move2 2s ease-in-out 4s forwards;
+}
+
+.front-back{
+    float: left ;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    margin: 25px 75px;
+   transform-style: preserve-3d; 
+   animation: getback 6s ease-in-out 6s infinite  ;
+}
+@keyframes getback{
+  0%{transform: rotatey(0deg);}
+  50%{transform: rotatey(180deg);}
+  100%{transform: rotatey(360deg);}  
+}
+.front-back-item{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+.base-item-front{
+    z-index: 10;
+    backface-visibility: hidden;
+    box-shadow: 10px -10px 50px 10px #993c99 ;
+}
+.front-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.base-item-back{
+    z-index: 9;
+    border-radius: 50%;
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 50px;
+    color: #613e7a;
+    text-shadow:1px 5px 5px #f89af8;
+    line-height: 40px;
+    box-shadow: 0px 5px 50px 10px #680368 inset;
+}
+.front-back:hover{
+    transform: rotatey(180deg);
+}
+.container2{
+    width: 1000px;
+    height: fit-content;
+    margin: 0px auto;
+    
+}
+.animation-items {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    /* background-color: #680368; */
+    border-radius: 50% ;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.stage-item{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 0px;
+    left: 0px;
+     background-color: #fdfdfd;
+    border: 0;
+    border-radius: 20% ;
+    text-align: center;
+    opacity: 0;;
+    box-shadow: 5px 5px 15px 5px rgba(199, 130, 185, 0.6) ;
+    animation:stage-moving 10s ease-in-out  infinite;
+}
+@keyframes stage-moving{
+    0%{transform: rotatey(30deg);}
+    50%{transform: rotatey(0deg);}
+    100%{transform: rotatey(-30deg);}
+}
+figure .stage-img{
+    width: 180px;
+    height: 160px;
+    margin: 5px auto 0px;
+    border-radius: 20% ;
+    border: 0; 
+}
+figcaption .stage-caption{
+    font: 700 16px 'Changa', sans-serif;
+    text-align: center;
+    color: #27093d;
+}
+.stage-item .overlay{
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+    position: relative;
+    }
+    .overlay::after{
+        position: absolute;
+        content: "";
+        top:0;
+        left: 0;
+        width: 0;
+        height: 0;
+        background-color: #e081e9;
+        border-radius: 20%;
+        visibility: hidden;
+        opacity: 0;
+        transition:  2s;
+    }
+    .overlay::before{
+        position: absolute;
+        content: "";
+        bottom:0;
+        right: 0;
+        width: 100%;
+        height:100%;
+        background-color: #e081e9;
+        border-radius: 25%;
+        visibility: hidden;
+        opacity: 0;
+        transition:  2s;
+    }
+    .stage-item:hover .overlay::after{
+        width: 100%;
+        height: 100%;
+        visibility: visible;
+        opacity: 0.7; 
+    }
+    .stage-item:hover .overlay::before{
+        width: 0;
+        height: 0;
+        visibility: visible;
+        opacity: 0.7; }
+.stage1{
+    z-index: 6;
+    animation: stage1-moving 2s ease-in-out 7s forwards;
+   
+}
+@keyframes stage1-moving{
+    0%{top:0px; left:0px; opacity: 0;}
+    100%{top:100px; left:-150px; opacity: 0.9;transform:rotate(-360deg);}
+}
+.stage2{
+    z-index: 5;
+    animation: stage2-moving 2s ease-in-out 9s forwards;
+}
+@keyframes stage2-moving{
+    0%{top:0px; left:0px; opacity: 0;}
+    100%{top:300px; left:-350px; opacity: 0.9;transform:rotate(-360deg);}
+}
+.stage3{
+    z-index: 4;
+    animation: stage3-moving 2s ease-in-out 11s forwards;
+    
+}
+@keyframes stage3-moving{
+    0%{top:0px; left:0px; opacity: 0;}
+    100%{top:500px; left:-150px; opacity: 0.9;transform:rotate(-360deg);}
+}
+.stage4{
+    z-index: 3;
+    animation: stage4-moving 2s ease-in-out 13s forwards;
+}
+@keyframes stage4-moving{
+    0%{top:0px; left:0px; opacity: 0;}
+    100%{top:500px; left:150px; opacity: 0.9;transform:rotate(360deg);}
+}
+.stage5{
+    z-index: 2;
+    animation: stage5-moving 2s ease-in-out 15s forwards;
+    
+}
+@keyframes stage5-moving{
+    0%{top:0px; left:0px; opacity: 0;}
+    100%{top:300px; left:350px; opacity: 0.9;transform:rotate(360deg)}
+}
+.stage6{
+    z-index: 1;
+    animation: stage6-moving 2s ease-in-out 17s forwards;
+}
+@keyframes stage6-moving{
+    0%{top:0px; left:0px; opacity: 0;}
+    100%{top:100px; left:150px; opacity: 0.9;transform: rotate(360deg);}
+} 
+.decore{
+    margin: 0px auto;
+    width: 500px;
+    height: 200px;
+    margin: auto;
+position: relative;} 
+.dec-item{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-image: url(..//images/OIP.jpg);
+    background-size: cover;
+    right: 0;
+    margin: 20px auto;
+    box-shadow: 1px 1px 5px 5px rgba(182, 82, 182, 0.685);
+    position: absolute;
+    opacity: 0;
+}
+@keyframes dec-move{
+    0%{top:0px; right:0px; transform: rotatey(360deg);opacity: 0.9;}
+    20%{top:100px; right:100px; transform: rotatey(-360deg);}
+    40%{top:0px; right:200px; transform: rotatey(360deg);}
+    60%{top:100px; right:300px; transform: rotatey(-360deg);opacity: 0.9;}
+    80%{top:0px; right:400px; transform: rotatey(360deg);}
+    100%{top:100px; right:450px; transform: rotatey(-360deg);opacity: 0.9;}
+}
+.decore1{
+    animation: dec-move 3s ease-in-out 19s infinite forwards;
+}
+.decore2{
+    animation: dec-move 3s ease-in-out 20s infinite forwards;
+}
+.decore3{
+    animation: dec-move 3s ease-in-out 21s infinite forwards;
+}
+
+.footer-right  .follow-list i{
+        color:#97048b;
+        font-size: 30px;
+    }
+    .footer-right    .follow-list{
+        list-style: none;
+        text-align: center;
+        font-size: 18px;
+        padding: 5px 5px;
+        line-height: 30px;
+    }
+    .footer-right   .follow-list li{
+        display: inline-block;
+        background-color: #c5c5b8;
+        width: 45px;
+        height: 45px;
+        margin: 20px 10px;
+        position: relative;
+        z-index: 1;
+        border-radius: 50%;
+        box-shadow: 10px -5px 20px 5px rgba(201, 47, 170,0.4);
+        animation: icon-move 5s ease-in-out infinite ;
+    }
+    @keyframes icon-move{
+        from{transform: rotatey(45deg);}
+        to{transform: rotatey(-45deg);}
+    }
+    .footer-right    .follow-list i{
+        display: block;
+        line-height: 45px;
+        font-size: 30px;
+        margin: auto;
+        text-align: center;
+    }
+    .footer-right  .follow-list a::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:#c92faa;
+    opacity: 0;
+    transition:  2s;
+    }
+    .footer-right  .follow-list  li:hover a::after{
+        opacity: 0.5;
+    }
+    .footer-right{
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+        padding: 15px;
+    }
+    
